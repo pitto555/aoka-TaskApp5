@@ -51,6 +51,5 @@ class ViewController: UIViewController {
         aleatAction.addAction(action)
         present(aleatAction, animated: true, completion: nil)
     }
-    
 }
 
