@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var textField2: UITextField!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var textField2: UITextField!
     
-    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet private weak var answerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +25,17 @@ class ViewController: UIViewController {
         let number = Double(textField.text!) ?? 0
         let number2 = Double(textField2.text!) ?? 0
         
-        if textField.text == "" {
+        guard !textField.text!.isEmpty else {
             aleat(aleatText: "割られる数を入力して下さい")
             return
         }
         
-        if textField2.text == "" {
+        guard !textField2.text!.isEmpty else {
             aleat(aleatText: "割る数を入力して下さい")
             return
         }
         
-        if textField2.text == "0" {
+        guard number2 != 0 else {
             aleat(aleatText: "割る数には0を入力しないで下さい")
             return
         }
